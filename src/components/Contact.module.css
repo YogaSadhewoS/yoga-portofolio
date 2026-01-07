@@ -1,0 +1,44 @@
+.wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.text {
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.socialLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    transition: transform 0.2s;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    min-width: 100px;
+    border: 1px solid transparent;
+}
+
+.socialLink:hover {
+    transform: translateY(-5px);
+    color: var(--accent);
+    border-color: var(--border);
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+}
