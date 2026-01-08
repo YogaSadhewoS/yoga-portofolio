@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import { projects } from '@/data/projects';
-import Navbar from '@/components/Navbar';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 export function generateStaticParams() {
     return projects.map((project) => ({
@@ -8,60 +8,56 @@ export function generateStaticParams() {
     }));
 }
 
-export default function ProjectDetail({ params }) {
-    const project = projects.find((p) => p.id.toString() === params.id);
+export default async function ProjectDetail({ params }) {
+    const { id } = await params;
+    const project = projects.find((p) => p.id.toString() === id);
 
     if (!project) {
-        return (
-            <>
-                <Navbar />
-                <div className="container section" style={{ textAlign: 'center' }}>
-                    <h1>Project Not Found</h1>
-                    <Link href="/" className="btn">Back Home</Link>
-                </div>
-            </>
-        );
+        notFound();
     }
 
     return (
-        <>
-            <Navbar />
-            <main className="container section">
-                <Link href="/#projects" style={{ display: 'inline-block', marginBottom: '2rem', color: 'var(--text-secondary)' }}>
-                    &larr; Back to Projects
-                </Link>
+        <main className="container section">
+            <Link href="/#projects" className="btn" style={{ marginBottom: '2rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                ← Back to Projects
+            </Link>
 
-                <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-                    <div style={{
-                        width: '100%',
-                        height: '300px',
-                        backgroundColor: '#222',
-                        borderRadius: '12px',
-                        marginBottom: '2rem',
-                        backgroundImage: 'linear-gradient(45deg, #111, #333)'
-                    }} />
+            <article className="fade-in visible">
+                <h1 className="section-title" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{project.title}</h1>
+                <p style={{ color: 'var(--accent)', fontSize: '1.2rem', marginBottom: '2rem', fontWeight: 600 }}>{project.role}</p>
 
-                    <h1 className="section-title" style={{ textAlign: 'left' }}>{project.title}</h1>
-                    <p style={{ color: 'var(--accent)', fontWeight: '600', marginBottom: '1rem', textTransform: 'uppercase' }}>{project.role}</p>
-
-                    <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '2rem' }}>
-                        {project.stack.map(tech => (
-                            <span key={tech} style={{
-                                fontSize: '0.8rem',
-                                background: 'rgba(255,255,255,0.1)',
-                                padding: '0.3rem 0.8rem',
-                                borderRadius: '20px'
-                            }}>
-                                {tech}
-                            </span>
-                        ))}
-                    </div>
-
-                    <div style={{ lineHeight: '1.8', color: '#ccc', whiteSpace: 'pre-line' }}>
-                        {project.longDesc}
-                    </div>
+                <div style={{
+                    width: '100%',
+                    height: '300px',
+                    backgroundColor: '#222',
+                    borderRadius: '12px',
+                    marginBottom: '2rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    backgroundImage: 'linear-gradient(45deg, #111, #222)',
+                    border: '1px solid var(--border)'
+                }}>
+                    <span style={{ color: 'var(--text-secondary)' }}>Project Image Placeholder</span>
                 </div>
-            </main>
-        </>
+
+                <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
+                    {project.stack.map(tech => (
+                        <span key={tech} style={{
+                            background: 'rgba(255,255,255,0.1)',
+                            padding: '0.4rem 1rem',
+                            borderRadius: '20px',
+                            fontSize: '0.9rem'
+                        }}>
+                            {tech}
+                        </span>
+                    ))}
+                </div>
+
+                <div style={{ lineHeight: '1.8', fontSize: '1.1rem', color: '#ccc', whiteSpace: 'pre-line' }}>
+                    {project.longDesc || project.desc}
+                </div>
+            </article>
+        </main>
     );
 }

@@ -20,7 +20,7 @@ export default function Hero() {
                     Hi, I'm <span className={styles.highlight}>Yoga</span>
                 </h1>
                 <p className={styles.bio}>
-                    A fresh graduate Information Technology professional passionate about Fullstack Development.
+                    Graduate in Computer Engineering passionate about Backend Development (Laravel, C#).
                     I build modern, responsive, and user-friendly web applications.
                 </p>
                 <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>

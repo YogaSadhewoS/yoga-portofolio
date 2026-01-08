@@ -1,29 +1,61 @@
 export const projects = [
     {
         id: 1,
-        title: "EcoTracker",
-        role: "Frontend Developer",
-        desc: "A mobile-responsive web app for tracking daily carbon footprint with interactive charts. Users can input their daily activities and get real-time feedback on their environmental impact. Features include a dashboard, goal setting, and gamification elements.",
-        stack: ["React", "Chart.js", "Firebase"],
-        longDesc: "EcoTracker addresses the growing need for personal environmental accountability. \n\n**My Contributions:**\n- Developed the interactive dashboard using Chart.js to visualize user data across different timeframes.\n- Implemented responsive UI components ensuring seamless experience on mobile devices.\n- Integrated Firebase Authentication and Firestore for real-time data syncing.\n\n**Key Challenges:**\nOptimizing the chart rendering performance for mobile devices with large datasets.",
+        title: "SIMGD",
+        role: "Fullstack Developer",
+        desc: "Web-based Management Information System for container depot operations, featuring multi-role access and real-time notifications to manage container inspection, repair, and operational reporting.",
+        stack: ["Laravel", "Tailwind CSS", "MySQL"],
+        longDesc: `SIMGD (Sistem Informasi Manajemen PT Garbantara Depo) is a web-based system designed to support and streamline depot operations by digitizing container inspection, repair, and administrative processes. The system implements multi-role access for Inventory, Cashier, Survey In, Repair, Tally, Operational Manager, and Director, allowing each division to manage data according to their responsibilities. 
+                   \n**My Contributions:**
+                   - Developed core features for Survey In and Repair divisions, including container inspection, damage reporting, and repair documentation
+                   - Implemented photo-based documentation to record container conditions after inspection and repair
+                   - Built real-time notification workflow between Survey In and Repair divisions to improve cross-team communication
+                   - Designed and implemented role-based access control for operational features
+                   - Supported automatic report generation (PDF) based on inspection, repair, and transaction data
+                   - Contributed to improving data accuracy and reducing manual documentation processes
+                   \n**Key Challenges:**\nOptimizing the chart rendering performance for mobile devices with large datasets.`,
         image: "/ecotracker-placeholder.jpg"
     },
     {
         id: 2,
-        title: "ShopEasy",
-        role: "Fullstack",
-        desc: "E-commerce platform with cart functionality, payment gateway integration, and admin dashboard.",
-        stack: ["Next.js", "Stripe", "MongoDB"],
-        longDesc: "ShopEasy is a comprehensive e-commerce solution designed for small businesses.\n\n**Features:**\n- Secure user authentication and profile management.\n- Stripe payment integration for credit card processing.\n- Admin dashboard for product and order management.\n\n**Tech Stack:**\nBuilt with Next.js App Router for server-side rendering and SEO benefits. MongoDB tracks inventory in real-time.",
+        title: "SIAKAN",
+        role: "Backend Developer",
+        desc: "Web-based archival management system developed for Dinas Kearsipan dan Perpustakaan Provinsi Jawa Tengah to digitize and manage cartographic archive data with authentication, image upload, and role-based access.",
+        stack: ["Laravel", "Bootstrap", "MySQL"],
+        longDesc: `SIAKAN (Sistem Informasi Arsip dan Kearsitekturan) is a web-based information system developed during my internship at the Central Java Provincial Archive and Library Office. The system was designed to address challenges in physical archive storage, data deterioration, and time-consuming manual search processes by digitizing archival data, particularly cartographic archives.
+                   \nIn this project, I worked as a Backend Developer, responsible for implementing core data management features using Laravel and MySQL. The system supports online archive management, including creating, updating, and deleting archive records, as well as secure user authentication for administrators and staff.
+                   \n**My Contributions:**
+                   - Developed backend features using Laravel and MySQL for managing cartographic archive data
+                   - Implemented CRUD operations with soft delete and hard delete mechanisms
+                   - Built user and admin authentication to secure access to archival data
+                   - Implemented image upload functionality for archive documentation
+                   - Designed and maintained database schemas to support archival data management
+                   - Ensured data could be accessed securely through a web-based system
+                   \n**Tech Stack:**\nBuilt with Next.js App Router for server-side rendering and SEO benefits. MongoDB tracks inventory in real-time.`,
         image: "/shopeasy-placeholder.jpg"
     },
     {
         id: 3,
-        title: "AI Note Taker",
+        title: "Recruitment Tracker",
         role: "Backend Developer",
-        desc: "Service that summarizes meeting notes using OpenAI API and stores them securely.",
-        stack: ["Python", "FastAPI", "PostgreSQL"],
-        longDesc: "A backend service exposing RESTful APIs for a meeting assistant application.\n\n**Architecture:**\n- FastAPI for high-performance async endpoints.\n- Celery workers for handling long-running AI summarization tasks.\n- PostgreSQL for structured storage of transcripts and summaries.\n\n**Security:**\nImplemented JWT authentication and role-based access control.",
+        desc: "Recruitment tracking web application developed during a Software Engineering bootcamp at Formulatrix, focusing on role-based access, job management, and collaborative feature development.",
+        stack: ["ASP.NET Core", "C#", "SQLite"],
+        longDesc: `This project is a recruitment tracking web application developed during a Software Engineering bootcamp at Formulatrix. The application is a continuation of a previous batch’s project and was customized to fit Formulatrix’s internal recruitment workflow, involving roles such as Admin, HR, User, and End User. The system allows users to apply for available job openings, while administrators can manage job postings by creating, opening, closing, and deleting job listings, as well as assigning roles to users. HR and End User roles are responsible for managing interview schedules for applicants, supporting a structured recruitment process.
+                   \n**My Contributions:**
+                   During this project, I actively contributed as a Software Engineer by implementing multiple features, improvements, and bug fixes through 13 merge requests.
+                   - Redesign Configure User UI Page 
+                   - Adjust Styling in Configure Page 
+                   - Add page transition preloader across all pages 
+                   - Add bulk jobs feature in Admin page
+                   - Show message when there is no closed job
+                   - Fixing location filter 
+                   - Fixing create user in configure page 
+                   - Handle null HrInterview and EndUserInterview page on Admin and HR role
+                   - Add hard delete job 
+                   - Add pagination in configure location 
+                   - Add search, filter, and sorting feature in configure user page 
+                   - Add password validation in configure user page 
+                   - Add password suggestion in configure user page`,
         image: "/ainote-placeholder.jpg"
     }
 ];

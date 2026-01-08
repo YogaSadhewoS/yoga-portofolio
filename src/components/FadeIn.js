@@ -8,14 +8,9 @@ export default function FadeIn({ children }) {
     useEffect(() => {
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setVisible(true);
-                    // Optional: Unobserve after triggering to prevent re-triggering?
-                    // observer.unobserve(entry.target); 
-                    // Actually usually better to just keep state true.
-                }
+                setVisible(entry.isIntersecting);
             });
-        });
+        }, { threshold: 0.1 });
 
         const current = domRef.current;
         if (current) observer.observe(current);
