@@ -9,7 +9,9 @@ export default function Projects() {
             <div className={styles.grid}>
                 {projects.map((project) => (
                     <div key={project.id} className={`card ${styles.card}`}>
-                        <div className={styles.image} style={{ backgroundImage: 'linear-gradient(45deg, #111, #222)' }} />
+                        <div className={styles.image} style={{
+                            backgroundImage: project.image ? `url(${project.image})` : 'linear-gradient(45deg, #111, #222)'
+                        }} />
                         <h3 className={styles.title}>{project.title}</h3>
                         <span className={styles.role}>{project.role}</span>
                         <p className={styles.desc}>{project.desc}</p>

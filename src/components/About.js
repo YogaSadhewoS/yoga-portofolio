@@ -8,7 +8,7 @@ export default function About() {
                 <div className={styles.imageWrapper}>
                     {/* Placeholder image - user should replace this */}
                     <Image
-                        src="/globe.svg"
+                        src="/YogaWisuda.jpeg"
                         alt="Yoga Profile"
                         fill
                         className={styles.image}

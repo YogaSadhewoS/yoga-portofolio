@@ -9,10 +9,10 @@ export default function Hero() {
                 <div className={styles.imageWrapper}>
                     {/* Using a placeholder service or local file. For now, empty or generic */}
                     <Image
-                        src="/globe.svg" // Temporary Next.js default, user will replace with their photo
+                        src="/FotoProfil.jpg"
                         alt="Profile"
-                        width={150}
-                        height={150}
+                        width={250}
+                        height={250}
                         className={styles.profileImage}
                     />
                 </div>

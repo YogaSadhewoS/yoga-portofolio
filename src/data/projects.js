@@ -12,9 +12,8 @@ export const projects = [
                    - Built real-time notification workflow between Survey In and Repair divisions to improve cross-team communication
                    - Designed and implemented role-based access control for operational features
                    - Supported automatic report generation (PDF) based on inspection, repair, and transaction data
-                   - Contributed to improving data accuracy and reducing manual documentation processes
-                   \n**Key Challenges:**\nOptimizing the chart rendering performance for mobile devices with large datasets.`,
-        image: "/ecotracker-placeholder.jpg"
+                   - Contributed to improving data accuracy and reducing manual documentation processes`,
+        image: "/NotifikasiSIMGD.png"
     },
     {
         id: 2,
@@ -30,9 +29,8 @@ export const projects = [
                    - Built user and admin authentication to secure access to archival data
                    - Implemented image upload functionality for archive documentation
                    - Designed and maintained database schemas to support archival data management
-                   - Ensured data could be accessed securely through a web-based system
-                   \n**Tech Stack:**\nBuilt with Next.js App Router for server-side rendering and SEO benefits. MongoDB tracks inventory in real-time.`,
-        image: "/shopeasy-placeholder.jpg"
+                   - Ensured data could be accessed securely through a web-based system`,
+        image: "/KartografiUser.png"
     },
     {
         id: 3,
@@ -56,6 +54,6 @@ export const projects = [
                    - Add search, filter, and sorting feature in configure user page 
                    - Add password validation in configure user page 
                    - Add password suggestion in configure user page`,
-        image: "/ainote-placeholder.jpg"
+        image: "/DashboardAdmin.png"
     }
 ];
