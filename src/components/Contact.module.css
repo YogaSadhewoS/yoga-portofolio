@@ -42,3 +42,9 @@
     width: 32px;
     height: 32px;
 }
+
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 0 1rem;
+    }
+}

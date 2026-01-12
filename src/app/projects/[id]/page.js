@@ -2,6 +2,7 @@ import { projects } from '@/data/projects';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ImageCarousel from '@/components/ImageCarousel';
+import styles from './project.module.css';
 
 export function generateStaticParams() {
     return projects.map((project) => ({
@@ -19,51 +20,31 @@ export default async function ProjectDetail({ params }) {
 
     return (
         <main className="container section">
-            <Link href="/#projects" className="btn" style={{ marginBottom: '2rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                ← Back to Projects
-            </Link>
+            <article className={`fade-in visible ${styles.article}`}>
+                <Link href="/#projects" className={`btn ${styles.backLink}`}>
+                    ← Back to Projects
+                </Link>
 
-            <article className="fade-in visible">
-                <h1 className="section-title" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{project.title}</h1>
-                <p style={{ color: 'var(--accent)', fontSize: '1.2rem', marginBottom: '2rem', fontWeight: 600 }}>{project.role}</p>
+                <h1 className={`${styles.title} section-title`}>{project.title}</h1>
+                <p className={styles.role}>{project.role}</p>
 
-                <div style={{
-                    width: '100%',
-                    height: 'auto',
-                    aspectRatio: '16/9', // Responsive aspect ratio
-                    marginBottom: '2rem',
-                    borderRadius: '12px',
-                    overflow: 'hidden',
-                    border: '1px solid var(--border)',
-                    backgroundColor: '#111'
-                }}>
+                <div className={styles.carouselWrapper}>
                     <ImageCarousel
                         images={project.images || (project.image ? [project.image] : [])}
                     />
                 </div>
 
-                <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
+                <div className={styles.stack}>
                     {project.stack.map(tech => (
-                        <span key={tech} style={{
-                            background: 'rgba(255,255,255,0.1)',
-                            padding: '0.4rem 1rem',
-                            borderRadius: '20px',
-                            fontSize: '0.9rem'
-                        }}>
+                        <span key={tech} className={styles.stackItem}>
                             {tech}
                         </span>
                     ))}
                 </div>
 
-                <div style={{
-                    lineHeight: '1.8',
-                    fontSize: '1.1rem',
-                    color: '#ccc',
-                    whiteSpace: 'pre-line',
-                    textAlign: 'justify'
-                }}>
+                <div className={styles.description}>
                     {(project.longDesc || project.desc).split('**').map((part, index) =>
-                        index % 2 === 1 ? <strong key={index} style={{ color: '#fff' }}>{part}</strong> : part
+                        index % 2 === 1 ? <strong key={index} className={styles.highlight}>{part}</strong> : part
                     )}
                 </div>
             </article>
