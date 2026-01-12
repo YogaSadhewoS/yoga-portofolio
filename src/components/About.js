@@ -23,7 +23,7 @@ export default function About() {
                     </div>
 
                     <p className={styles.description}>
-                        Hello! I'm Yoga, a Computer Engineering graduate with a strong focus on Backend Development.
+                        Hello! I'm Yoga, a Computer Engineering graduate from Diponegoro University with a strong focus on Backend Development.
                         I love solving complex problems and turning them into simple, elegant solutions.
                         My journey in tech has been driven by curiosity and a desire to build things that matter.
                     </p>

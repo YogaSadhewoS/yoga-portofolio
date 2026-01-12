@@ -13,7 +13,8 @@ export const projects = [
                    - Designed and implemented role-based access control for operational features
                    - Supported automatic report generation (PDF) based on inspection, repair, and transaction data
                    - Contributed to improving data accuracy and reducing manual documentation processes`,
-        image: "/NotifikasiSIMGD.png"
+        image: "/NotifikasiSIMGD.png",
+        images: ["/NotifikasiSIMGD.png", "/DashboardSurveyIn.jpg", "/AddSurveyIn.jpg"]
     },
     {
         id: 2,
@@ -29,8 +30,10 @@ export const projects = [
                    - Built user and admin authentication to secure access to archival data
                    - Implemented image upload functionality for archive documentation
                    - Designed and maintained database schemas to support archival data management
-                   - Ensured data could be accessed securely through a web-based system`,
-        image: "/KartografiUser.png"
+                   - Ensured data could be accessed securely through a web-based system
+                   \n**Tech Stack:**\nBuilt with Next.js App Router for server-side rendering and SEO benefits. MongoDB tracks inventory in real-time.`,
+        image: "/KartografiUser.png",
+        images: ["/LoginSIAKAN.png", "/Kearsitekturan.png", "/KartografiUser.png"]
     },
     {
         id: 3,
@@ -54,6 +57,7 @@ export const projects = [
                    - Add search, filter, and sorting feature in configure user page 
                    - Add password validation in configure user page 
                    - Add password suggestion in configure user page`,
-        image: "/DashboardAdmin.png"
+        image: "/DashboardAdmin.png",
+        images: ["/DashboardAdmin.png", "/BulkDelete.png", "/InterviewPage.png"]
     }
 ];

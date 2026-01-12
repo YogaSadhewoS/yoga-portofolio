@@ -44,18 +44,39 @@ export default function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
+    const closeMenu = () => {
+        setIsOpen(false);
+    };
+
     return (
         <nav className={styles.navbar}>
             <div className={`container ${styles.navContainer}`}>
-                <Link href="/" className={styles.logo}>
+                <Link href="/" className={styles.logo} onClick={closeMenu}>
                     Yoga<span style={{ color: 'var(--accent)' }}>.dev</span>
                 </Link>
-                <ul className={styles.navLinks}>
+
+                <button
+                    className={`${styles.hamburger} ${isOpen ? styles.open : ''}`}
+                    onClick={toggleMenu}
+                    aria-label="Toggle menu"
+                >
+                    <div className={styles.line} />
+                    <div className={styles.line} />
+                    <div className={styles.line} />
+                </button>
+
+                <ul className={`${styles.navLinks} ${isOpen ? styles.open : ''}`}>
                     <li>
                         <Link
                             href="/"
                             className={activeSection === 'home' || activeSection === '' ? styles.active : ''}
-                            onClick={() => setActiveSection('home')}
+                            onClick={() => { setActiveSection('home'); closeMenu(); }}
                         >
                             Home
                         </Link>
@@ -64,7 +85,7 @@ export default function Navbar() {
                         <Link
                             href="/#about"
                             className={activeSection === 'about' ? styles.active : ''}
-                            onClick={() => setActiveSection('about')}
+                            onClick={() => { setActiveSection('about'); closeMenu(); }}
                         >
                             About
                         </Link>
@@ -73,7 +94,7 @@ export default function Navbar() {
                         <Link
                             href="/#projects"
                             className={activeSection === 'projects' ? styles.active : ''}
-                            onClick={() => setActiveSection('projects')}
+                            onClick={() => { setActiveSection('projects'); closeMenu(); }}
                         >
                             Projects
                         </Link>
@@ -82,7 +103,7 @@ export default function Navbar() {
                         <Link
                             href="/#contact"
                             className={activeSection === 'contact' ? styles.active : ''}
-                            onClick={() => setActiveSection('contact')}
+                            onClick={() => { setActiveSection('contact'); closeMenu(); }}
                         >
                             Contact
                         </Link>

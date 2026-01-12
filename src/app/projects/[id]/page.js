@@ -1,6 +1,7 @@
 import { projects } from '@/data/projects';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import ImageCarousel from '@/components/ImageCarousel';
 
 export function generateStaticParams() {
     return projects.map((project) => ({
@@ -26,43 +27,20 @@ export default async function ProjectDetail({ params }) {
                 <h1 className="section-title" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{project.title}</h1>
                 <p style={{ color: 'var(--accent)', fontSize: '1.2rem', marginBottom: '2rem', fontWeight: 600 }}>{project.role}</p>
 
-                {project.image ? (
-                    <div style={{
-                        width: '100%',
-                        height: 'auto',
-                        minHeight: '300px',
-                        marginBottom: '2rem',
-                        borderRadius: '12px',
-                        overflow: 'hidden',
-                        border: '1px solid var(--border)'
-                    }}>
-                        <img
-                            src={project.image}
-                            alt={project.title}
-                            style={{
-                                width: '100%',
-                                height: '100%',
-                                objectFit: 'cover',
-                                display: 'block'
-                            }}
-                        />
-                    </div>
-                ) : (
-                    <div style={{
-                        width: '100%',
-                        height: '300px',
-                        backgroundColor: '#222',
-                        borderRadius: '12px',
-                        marginBottom: '2rem',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        backgroundImage: 'linear-gradient(45deg, #111, #222)',
-                        border: '1px solid var(--border)'
-                    }}>
-                        <span style={{ color: 'var(--text-secondary)' }}>Project Image Placeholder</span>
-                    </div>
-                )}
+                <div style={{
+                    width: '100%',
+                    height: 'auto',
+                    aspectRatio: '16/9', // Responsive aspect ratio
+                    marginBottom: '2rem',
+                    borderRadius: '12px',
+                    overflow: 'hidden',
+                    border: '1px solid var(--border)',
+                    backgroundColor: '#111'
+                }}>
+                    <ImageCarousel
+                        images={project.images || (project.image ? [project.image] : [])}
+                    />
+                </div>
 
                 <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
                     {project.stack.map(tech => (

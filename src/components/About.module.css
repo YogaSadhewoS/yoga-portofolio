@@ -55,6 +55,7 @@
     color: var(--text-secondary);
     line-height: 1.8;
     font-size: 1.05rem;
+    text-align: justify;
 }
 
 .techStack {
@@ -116,6 +117,10 @@
     .imageWrapper {
         max-width: 300px;
         margin: 0 auto;
+        height: 400px;
+        /* Explicit height works better with 'fill' */
+        width: 100%;
+        position: relative;
     }
 
     .textWrapper {
