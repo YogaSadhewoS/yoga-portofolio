@@ -30,8 +30,7 @@ export const projects = [
                    - Built user and admin authentication to secure access to archival data
                    - Implemented image upload functionality for archive documentation
                    - Designed and maintained database schemas to support archival data management
-                   - Ensured data could be accessed securely through a web-based system
-                   \n**Tech Stack:**\nBuilt with Next.js App Router for server-side rendering and SEO benefits. MongoDB tracks inventory in real-time.`,
+                   - Ensured data could be accessed securely through a web-based system`,
         image: "/KartografiUser.png",
         images: ["/LoginSIAKAN.png", "/Kearsitekturan.png", "/KartografiUser.png"]
     },
