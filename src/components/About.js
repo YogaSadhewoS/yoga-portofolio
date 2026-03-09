@@ -29,8 +29,8 @@ export default function About() {
                     </p>
 
                     <p className={styles.description}>
-                        Currently, I specialize in building robust web applications using Laravel and C#.
-                        When I'm not coding, I'm usually exploring new technologies or refining my existing skills.
+                        I currently focus on developing web applications with Laravel and C#.
+                        In my free time, I like exploring new technologies and continuing to improve my programming skills.
                     </p>
 
                     <div className={styles.techStack}>
